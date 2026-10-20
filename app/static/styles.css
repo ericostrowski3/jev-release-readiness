@@ -1,0 +1,38 @@
+:root { --border: #d0d4da; --muted: #666; --bad: #b42318; --warn: #9a6700; --good: #1a7f37; --bg: #fff; --panel: #f6f7f9; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.45 system-ui, sans-serif; color: #1f2328; background: var(--bg); }
+header { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+h1 { font-size: 18px; margin: 0; }
+h2 { font-size: 16px; margin: 20px 0 8px; }
+.layout { display: grid; grid-template-columns: 240px 1fr; }
+nav { padding: 12px 16px; border-right: 1px solid var(--border); }
+nav button { width: 100%; margin-bottom: 6px; }
+nav ul { list-style: none; padding: 0; margin: 12px 0 0; }
+nav li { padding: 6px 4px; cursor: pointer; border-radius: 4px; }
+nav li.active, nav li:hover { background: var(--panel); }
+main { padding: 12px 16px 48px; min-width: 0; max-width: 900px; }
+label { display: block; font-weight: 600; margin-top: 8px; }
+input, textarea, select, button { font: inherit; }
+input, textarea, select { width: 100%; padding: 6px 8px; border: 1px solid var(--border); border-radius: 4px; }
+textarea { min-height: 70px; }
+button { padding: 6px 12px; border: 1px solid var(--border); border-radius: 4px; background: var(--panel); cursor: pointer; }
+button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+button:disabled { opacity: .6; cursor: wait; }
+.card { border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin: 8px 0; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.row > * { flex: 1 1 160px; }
+.row > button { flex: 0 0 auto; }
+.muted { color: var(--muted); font-size: 13px; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 13px; font-weight: 600; background: var(--panel); }
+.ready, .present, .not_applicable, .unaffected { color: var(--good); }
+.blocked, .needs_review, .missing { color: var(--warn); }
+.error { color: var(--bad); background: #fff1f0; border: 1px solid #ffccc7; padding: 8px; border-radius: 4px; }
+.banner { background: #fff8c5; border: 1px solid #d4a72c; padding: 8px; border-radius: 4px; margin: 8px 0; }
+.gaps li { margin: 2px 0; }
+details { margin-top: 6px; }
+.card form { margin-top: 8px; }
+pre { white-space: pre-wrap; font-size: 12px; background: var(--panel); padding: 6px; border-radius: 4px; }
+@media (max-width: 700px) {
+  .layout { grid-template-columns: 1fr; }
+  nav { border-right: 0; border-bottom: 1px solid var(--border); }
+}
